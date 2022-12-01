@@ -1,0 +1,90 @@
+main {
+  position: relative;
+
+  .health_code {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .health_code_text {
+    color: #bbf5fa;
+    width: 125px;
+    height: 40px;
+    font-size: 21px;
+    position: absolute;
+    top: 13px;
+    left: 51px;
+    background: #2c8ef3;
+    font-weight: 600;
+  }
+
+  .name {
+    color: #bbf5fa;
+    width: 85px;
+    height: 40px;
+    font-size: 21px;
+    position: absolute;
+    top: 13px;
+    right: 2px;
+    background: #2c8ef3;
+    font-weight: 600;
+  }
+
+  .number {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 30px;
+    position: absolute;
+    top: 62px;
+    padding: 0 12px;
+    letter-spacing: 0.5px;
+    background: #2c8ef3;
+    .test {
+      color: #f6fdfd;
+      font-size: 20px;
+    }
+  }
+
+  .now_time {
+    position: absolute;
+    left: 37px;
+    width: 300px;
+    top: 148px;
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    color: #383d4f;
+    background: white;
+  }
+
+  .collect_date {
+    position: absolute;
+    left: 21px;
+    bottom: 70px;
+    font-size: 11px;
+    background: #00aa6b;
+    color: #d1fff7;
+    padding: 0 1px;
+  }
+
+  .collect_date {
+    position: absolute;
+    left: 21px;
+    bottom: 50px;
+    font-size: 11px;
+    background: #00aa6b;
+    color: #d1fff7;
+    padding: 0 1px;
+  }
+
+  .result_date {
+    position: absolute;
+    left: 142px;
+    bottom: 50px;
+    font-size: 11px;
+    background: #04a015;
+    color: #bbfdba;
+    padding: 0 1px;
+  }
+}

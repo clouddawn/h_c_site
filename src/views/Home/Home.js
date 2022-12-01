@@ -1,0 +1,76 @@
+import qs from "qs";
+import {Dialog, Toast} from "vant";
+import dayjs from "dayjs";
+
+export default {
+  data() {
+    return {
+      nowTime:"",
+      hesuanTime:""
+    };
+  },
+  mounted() {
+    setInterval(()=>{
+      this.nowTime = dayjs().format("MM-DD HH:mm:ss");
+      this.hesuanTime = dayjs().add(-1,'day').format("MM月DD日")
+    },200)
+  },
+  methods: {
+    signIn() {
+      let url = new URLSearchParams(window.location.search);
+      let result = url.get("code");
+      if (this.$route.query.code || result) {
+        let params;
+        params = qs.stringify({
+          code: this.$route.query.code || result,
+          certNo: this.$route.query.certNo,
+          certName: this.$route.query.certName,
+          mobile: this.$route.query.mobile,
+        });
+        Toast.loading({
+          message: "加载中...",
+          forbidClick: true,
+        });
+        this.$axios
+          .post("/userLogin", params)
+          .then((res) => {
+            Toast.clear();
+            if (res.data.result !== 1) {
+              Dialog.alert({
+                message: res.data.reason,
+              }).then(() => {
+              });
+            }
+          })
+          .catch((err) => {
+            Toast.clear();
+            console.error(err);
+            Dialog.alert({
+              message: "接口调用失败",
+            }).then(() => {
+            });
+          });
+      } else {
+        Toast.loading({
+          message: "加载中...",
+          forbidClick: true,
+        });
+        this.$axios.post("/isLogin")
+          .then((res) => {
+            Toast.clear();
+            if (res.data.result !== 1) {
+              Dialog.alert({
+                message: res.data.reason,
+              }).then(() => {
+              });
+            }
+          })
+          .catch((err) => {
+            Toast.clear();
+            console.log(err);
+            Toast("调用接口失败");
+          });
+      }
+    },
+  }
+};
