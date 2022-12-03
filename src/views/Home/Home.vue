@@ -8,10 +8,10 @@
       <div class="idNumber test">342******559</div>
     </div>
     <div class="now_time">{{ nowTime }}</div>
-    <div class="collect_date">12月3日核酸检测</div>
-    <div class="result_date">12月1日核酸检测</div>
-<!--    <div class="collect_date">{{hesuanTime}}核酸检测</div>-->
-<!--    <div class="result_date">{{hesuanTime}}核酸检测</div>-->
+    <div class="collect_date" @click="getHesuanTime">{{ hesuanTime }}核酸检测</div>
+    <div class="result_date" @click="getResultTime">{{ resultTime }}核酸检测</div>
+    <!--    <div class="collect_date">{{hesuanTime}}核酸检测</div>-->
+    <!--    <div class="result_date">{{hesuanTime}}核酸检测</div>-->
   </main>
 </template>
 
