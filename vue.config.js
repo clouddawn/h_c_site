@@ -25,7 +25,7 @@ function onProxyRes(proxyRes){
 
 module.exports = {
   outputDir: "h5_enterpriserpass",
-  publicPath: '/h5_enterpriserpass',
+  publicPath: '/',
   chainWebpack: (config) => {
     config.resolve.alias
       //set第一个参数：设置的别名，第二个参数：设置的路径

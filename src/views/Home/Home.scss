@@ -52,7 +52,7 @@ main {
     width: 300px;
     top: 148px;
     display: flex;
-    font-size: 40px;
+    font-size: 39px;
     font-weight: bold;
     color: #383d4f;
     background: white;
@@ -71,6 +71,7 @@ main {
   .collect_date {
     position: absolute;
     left: 21px;
+    width: 95px;
     bottom: 50px;
     font-size: 11px;
     background: #00aa6b;
@@ -81,6 +82,7 @@ main {
   .result_date {
     position: absolute;
     left: 142px;
+    width: 95px;
     bottom: 50px;
     font-size: 11px;
     background: #04a015;
